@@ -168,7 +168,8 @@
     .compartir-main{flex:1;min-width:240px;display:flex;flex-direction:column;gap:5px}
     .compartir-label{font-size:11px;font-weight:700;color:var(--t-texto-sec);text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
     .link-box{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--t-gris-200);border-radius:8px;padding:9px 11px}
-    .link-box .url{flex:1;min-width:0;font-size:13px;color:var(--t-azul-mid);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .link-box .url{flex:1;min-width:0;font-size:13px;color:var(--t-azul-mid);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;cursor:pointer}
+    .link-box a.url:hover{text-decoration:underline}
     .msg-box{background:#fff;border:1.5px solid var(--t-gris-200);border-radius:8px;padding:10px 12px;font-size:12.5px;color:var(--t-navy-mid);line-height:1.45;overflow-wrap:anywhere;word-break:break-word}
     .compartir-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
     .btn-mini{display:inline-flex;align-items:center;gap:6px;background:var(--t-blanco);border:1.5px solid var(--t-gris-300);color:var(--t-navy);border-radius:999px;padding:7px 13px;font-family:var(--font-body);font-size:12.5px;font-weight:600;cursor:pointer;transition:all .15s;text-decoration:none}
@@ -278,7 +279,7 @@
 
         <div class="disclaimer">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#092E4A" stroke-width="1.6"/><path d="M12 11v5M12 8h.01" stroke="#092E4A" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span>Este panel muestra lo que cada persona declar&oacute; al responder la Encuesta de Fin de Semestre &mdash;tal como cada quien lo indica&mdash;. Muestra <b>qui&eacute;nes</b> han respondido, no lo que respondieron: las respuestas individuales son confidenciales y la escuela nunca las ve. &Uacute;salo para acompa&ntilde;ar y recordar con cari&ntilde;o a tu comunidad, nunca como control.</span>
+          <span>Este panel muestra <b>qui&eacute;nes</b> de tu comunidad han respondido la Encuesta de Fin de Semestre, seg&uacute;n lo que cada persona indic&oacute; al participar. Muestra la participaci&oacute;n, no las respuestas: estas son confidenciales y la escuela nunca las ve. &Uacute;salo para acompa&ntilde;ar y recordar con cari&ntilde;o, nunca como control.</span>
         </div>
 
         <div class="banner-aviso" id="banner-noimpl" style="display:none">
@@ -2914,7 +2915,7 @@ window.qrcode=qrcode;
           ${qrCol}
           <div class="compartir-main">
             <div class="compartir-label">Link de la encuesta</div>
-            <div class="link-box"><span class="url">${esc(url)}</span><button class="btn-mini" data-copy="${esc(url)}" onclick="copiar(this)">Copiar</button></div>
+            <div class="link-box"><a class="url" href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a><button class="btn-mini" data-copy="${esc(url)}" onclick="copiar(this)">Copiar</button></div>
             <div class="compartir-label">Mensaje listo para enviar</div>
             <div class="msg-box">${esc(msg)}</div>
             <div class="compartir-btns">
