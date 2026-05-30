@@ -169,7 +169,7 @@
     .compartir-label{font-size:11px;font-weight:700;color:var(--t-texto-sec);text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
     .link-box{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--t-gris-200);border-radius:8px;padding:9px 11px}
     .link-box .url{flex:1;min-width:0;font-size:13px;color:var(--t-azul-mid);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .msg-box{background:#fff;border:1.5px solid var(--t-gris-200);border-radius:8px;padding:10px 12px;font-size:12.5px;color:var(--t-navy-mid);line-height:1.45}
+    .msg-box{background:#fff;border:1.5px solid var(--t-gris-200);border-radius:8px;padding:10px 12px;font-size:12.5px;color:var(--t-navy-mid);line-height:1.45;overflow-wrap:anywhere;word-break:break-word}
     .compartir-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
     .btn-mini{display:inline-flex;align-items:center;gap:6px;background:var(--t-blanco);border:1.5px solid var(--t-gris-300);color:var(--t-navy);border-radius:999px;padding:7px 13px;font-family:var(--font-body);font-size:12.5px;font-weight:600;cursor:pointer;transition:all .15s;text-decoration:none}
     .btn-mini:hover{border-color:var(--t-azul-mid);color:var(--t-azul-mid)}
@@ -207,6 +207,10 @@
       .niveles-grid{grid-template-columns:1fr}
       .compartir-grid{flex-direction:column}
       .qr-col{align-self:center}
+      .compartir-main{min-width:0;width:100%}
+      .prog-body{padding:16px 16px 8px}
+      .compartir{padding:14px}
+      .seccion-head{flex-wrap:wrap}
     }
   </style>
 </head>
@@ -2958,7 +2962,7 @@ window.qrcode=qrcode;
       document.getElementById("view-dashboard").style.display = "none";
       document.getElementById("head-right").style.display     = "none";
       document.getElementById("view-login").style.display     = "flex";
-      document.getElementById("login-bg").style.display       = "block";
+      document.getElementById("login-bg").style.display       = "flex";
       document.getElementById("input-rbd").value   = "";
       document.getElementById("input-clave").value = "";
       hideError();
