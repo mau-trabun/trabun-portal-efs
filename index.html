@@ -28,7 +28,8 @@
       --gap-sec:22px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font-body);background:var(--t-fondo);color:var(--t-navy);min-height:100vh;display:flex;flex-direction:column}
+    html{overflow-x:hidden}
+    body{font-family:var(--font-body);background:var(--t-fondo);color:var(--t-navy);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;max-width:100%}
     h1,h2,h3,.colegio-nombre,.prog-titulo,.login-card h2{letter-spacing:-0.01em;line-height:1.15}
 
     /* ── HEADER ─────────────────────────────────────────── */
@@ -57,7 +58,7 @@
     .login-card p{font-size:14px;color:var(--t-texto-sec);margin-bottom:26px;line-height:1.5}
     .field-group{text-align:left;margin-bottom:16px}
     .field-group label{display:block;font-size:13px;font-weight:600;color:var(--t-navy);margin-bottom:6px}
-    .field-group input{width:100%;padding:12px 14px;border:1.5px solid var(--t-gris-300);border-radius:10px;font-family:var(--font-body);font-size:15px;color:var(--t-navy);transition:border-color .15s}
+    .field-group input{width:100%;padding:12px 14px;border:1.5px solid var(--t-gris-300);border-radius:10px;font-family:var(--font-body);font-size:16px;color:var(--t-navy);transition:border-color .15s}
     .field-group input:focus{outline:none;border-color:var(--t-azul-mid)}
     .btn-primary{width:100%;background:var(--t-rojo);color:#fff;border:none;border-radius:999px;padding:14px;font-family:var(--font-display);font-size:15px;font-weight:700;cursor:pointer;transition:background .15s;margin-top:6px}
     .btn-primary:hover{background:var(--t-rojo-hover)}
@@ -150,7 +151,7 @@
     .nivel-label{font-family:var(--font-display);font-size:14.5px;font-weight:700;color:var(--t-navy)}
     .nivel-count{margin-left:auto;font-size:13px;color:var(--t-texto-sec);font-weight:600}
     .nivel-count.cero{font-style:italic;font-weight:400}
-    .nivel-chevron{font-size:11px;color:var(--t-gris-300);transition:transform .2s}
+    .nivel-chevron{flex-shrink:0;margin-left:10px;color:var(--t-texto-sec);transition:transform .2s}
     .nivel-card.activo .nivel-chevron{transform:rotate(180deg);color:var(--t-navy)}
     .nivel-detalle{display:none;padding:0 15px 14px;border-top:1px solid var(--t-gris-200)}
     .nivel-card.activo .nivel-detalle{display:block}
@@ -212,6 +213,8 @@
       .prog-body{padding:16px 16px 8px}
       .compartir{padding:14px}
       .seccion-head{flex-wrap:wrap}
+      .prog-head{padding:18px 16px 28px}
+      .dash-wave{left:auto;right:auto;margin-left:-20px;margin-right:-20px;width:auto}
     }
   </style>
 </head>
@@ -2831,7 +2834,7 @@ window.qrcode=qrcode;
           <div class="nivel-row">
             <span class="nivel-label">${esc(nv.label)}</span>
             <span class="nivel-count ${k === 0 ? "cero" : ""}">${esc(countTxt)}</span>
-            <span class="nivel-chevron">▾</span>
+            <svg class="nivel-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="nivel-detalle">${names}${ctx}</div>
         </div>`;
